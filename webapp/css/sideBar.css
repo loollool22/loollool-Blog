@@ -1,0 +1,29 @@
+/* side bar */
+.sidebar {
+    position: absolute;
+    width: 224px;
+    height: 856px;
+    left: 0px;
+    top: 100px;
+}
+/* profile */
+#profileBox {
+    position: absolute;
+    width: 178px;
+    height: 172px;
+    left: 23px;
+    top: 133px;
+    position: absolute;
+    border-radius: 50%;
+
+    background: #D9D9D9;
+}
+#profileBox>img {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 178px;
+    height: 172px;
+    border-radius: 50%;
+}
