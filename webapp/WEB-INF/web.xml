@@ -2,6 +2,57 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>loolloolBlog</display-name>
   <welcome-file-list>
-    <welcome-file>main.html</welcome-file>
+    <welcome-file>main.jsp</welcome-file>
   </welcome-file-list>
+
+  <servlet>
+  	<servlet-name>userLogin</servlet-name>
+  	<servlet-class>com.blog.controller.UserController</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<servlet-name>boardNew</servlet-name>
+  	<servlet-class>com.blog.controller.NewPostController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>boardList</servlet-name>
+  	<servlet-class>com.blog.controller.BoardController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>boardPost</servlet-name>
+  	<servlet-class>com.blog.controller.PostController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>boardEdit</servlet-name>
+  	<servlet-class>com.blog.controller.EditController</servlet-class>
+  </servlet>  
+  <servlet>
+  	<servlet-name>boardDelete</servlet-name>
+  	<servlet-class>com.blog.controller.DeletePostController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>userLogin</servlet-name>
+  	<url-pattern>/user/login.go</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>boardNew</servlet-name>
+  	<url-pattern>/board/add.go</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>boardList</servlet-name>
+  	<url-pattern>/board/list.go</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>boardPost</servlet-name>
+  	<url-pattern>/board/post.go</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>boardEdit</servlet-name>
+  	<url-pattern>/board/edit.go</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>boardDelete</servlet-name>
+  	<url-pattern>/board/delete.go</url-pattern>
+  </servlet-mapping>
 </web-app>

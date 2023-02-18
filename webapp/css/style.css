@@ -1,0 +1,467 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    color: #222222;
+}
+
+ul, li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+button: not(.poplogin),
+button: not(.popclose),
+button: not(.editBtn),
+button: not(.submitBtn),
+button: not(.resetBtn),
+button: not(.createPostBtn),
+button: not(.deleteBtn) {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+input {
+    border: none;
+    font-family: inherit;
+}
+
+textarea {
+    font-family: inherit;
+    color: inherit;
+}
+
+select {
+    width: 200px;
+    border: 1px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 12px 13px;
+    margin: 20px 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+select:focus {
+    border: 1px solid #9B51E0;
+    box-sizing: border-box;
+    border-radius: 10px;
+    outline: 3px solid #edf738;
+    border-radius: 10px;
+}
+/* --- */
+
+#wrap {
+    width: 1440px;
+    margin: auto;
+}
+
+/* header */
+.header {
+    width: 1440px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+.header #loginBtn,
+.header #logoutBtn {
+    display: inline-block;
+    width: 140px;
+    padding: 10px 0;
+    margin: 0 10px;
+    border-radius: 50px;
+    color: #ffffff;
+}
+
+.header #loginBtn {
+    background: #000000;
+
+}
+
+.header #logoutBtn {
+    background-color: #858585;
+}
+
+.header #blogTitle {
+    width: 580px;
+    padding: 10px 0;
+    background: #D9D9D9;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.header #headerSearchBar {
+    width: 175px;
+    padding: 10px 0;
+    background: #D9D9D9;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.header #headerSearchBar:focus,
+.header #headerSearchBar:active {
+    border: none;
+    outline: none;
+}
+
+
+/* cont */
+.cont {
+    display: flex;
+    position: relative;
+    top: 100px;
+}
+
+.sideBar {
+    width: 224px;
+    height: calc(100vh - 80px);
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+/*     justify-content: space-around; */
+    align-items: center;
+    position: fixed;
+    top: 100px;
+}
+
+.sideBar>#profileBox {
+	margin: 50px 0;
+}
+
+.sideBar>#profileBox>img {
+	width: 200px;
+	border-radius: 50%;
+	display: block;
+	position: inherit;
+}
+
+.categoryBox {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.categoryBox a {
+    display: inline-block;
+    padding: 10px 40px;
+    background: #D9D9D9;
+    border-radius: 50px;
+    margin: 6px 0;
+}
+
+/* --- */
+
+/* mainBox */
+.mainBox {
+    width: calc(100% - 224px);
+    position: relative;
+    left: 224px;
+}
+.mainBox>img {
+	border-radius: 80px;
+    width: 90%;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+/* --- */
+
+/* postList */
+.postList {
+    width: calc(100% - 224px);
+    position: relative;
+    left: 224px;
+    background-color: #D9D9D9;
+    padding: 40px 30px 60px;
+    box-sizing: border-box;
+}
+
+#categoryTitle {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#postBox {
+	display: inline-block;
+    width: 922px;
+    margin-left: 240px;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 16px 30px;
+    box-sizing: border-box;
+}
+
+#postBox>div {
+    margin-bottom: 10px;
+}
+
+#postBox>div:last-child {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0;
+}
+
+#postTitle {
+    width: 100%;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+#categoryValue,
+#postedTime {
+    width: 410px;
+    background-color: #D9D9D9;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+/* --- */
+
+/* post.jsp - postList */
+.postList {
+    width: calc(100% - 224px);
+    position: relative;
+    left: 224px;
+    background-color: #D9D9D9;
+    padding: 40px 30px 60px;
+    box-sizing: border-box;
+}
+
+.postList .createPostBtn {
+	display: inline;
+    padding: 10px 22px;
+    margin: 20px;
+    margin-left: 1040px;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 16px;
+    background: #111111;
+}
+
+.postList .subjectBox {
+    width: 100%;
+    background: #A7A7A7;
+    text-align: center;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    margin-bottom: 90px;
+    border-radius: 40px;
+}
+
+.postList .subjectBox input {
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 32px;
+    text-align: center;
+}
+
+.postList .contentBox {
+    width: 100%;
+    background-color: #D9D9D9;
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.postList .contentBox input {
+    display: inline-block;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    font-size: 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.postList .contentBox>.editBtn,
+.postList .contentBox>.deleteBtn,
+.postList .contentBox>.submitBtn,
+.postList .contentBox>.resetBtn {
+	display: inline;
+    padding: 10px 22px;
+    margin: 20px;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 16px;
+    background: #111111;
+}
+
+.postList .contentBox>.deleteBtn {
+	background: #858585;
+}
+
+
+.postList .commentBox {
+    width: 700px;
+    margin: auto;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.postList .commentBox > div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.postList .commentBox #nickname {
+    background: #D9D9D9;
+    text-align: center;
+    padding: 6px 0;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.postList .commentBox button {
+    display: inline-block;
+    padding: 6px 20px;
+    margin: 0 4px;
+    border-radius: 50px;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.postList .commentBox button:first-child {
+    background-color: #111111;
+}
+
+.postList .commentBox button:last-child {
+    background-color: #7e7e7e;
+}
+
+.postList .commentBox #commentContent {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.postList .commentBox #commentDate {
+    display: inline-block;
+    width: 100%;
+    background-color: #D9D9D9;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    text-align: center;
+}
+
+/* footer */
+.footer {
+    width: calc(100% - 224px);
+    height: 20px;
+    position: relative;
+    top: 1000px;
+    left: 224px;
+    background-color: #aaaaaa;
+    text-align: center;
+    padding: 10px 0;
+}
+/* --- */
+
+/* popup - modal */
+#popup {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    left: 0px; top: 0px;
+    opacity: 0;
+    animation: showPopup .5s ease-in-out forwards;
+}
+@keyframes showPopup {
+    from{}to{
+        opacity: 1;
+    }
+}
+#popup>.frame {
+    width: 400px;
+    margin: 360px auto;
+    border: 5px solid #d9d9d9;
+    border-radius: 9px;
+}
+#popup>.frame>div{
+    padding: 2px;
+}
+#popup>.frame>div:first-child{
+    border-radius: 5px 5px 0px 0px;
+    text-align: center;
+}
+#popup>.frame>.content{
+    padding: 50px 20px;
+    background-color: white;
+}
+#popup>.frame>div:last-child{
+    background-color: rgb(255 255 255 / 60%);
+    border-radius: 0px 0px 5px 5px;
+/*     text-align: right; */
+}
+#popup label{
+    display: inline-block;
+    width: 50%;
+    text-align: left;
+}
+#popup button:first-child {
+	display: inline-block;
+    width: 50px;
+    padding: 10px 0;
+    margin: 10px;
+    border-radius: 15px;
+    color: #ffffff;
+	background-color: #000000;
+}
+#popup button:last-child {
+	display: inline-block;
+    width: 50px;
+    padding: 10px 0;
+    margin: 10px;
+    border-radius: 15px;
+    color: #ffffff;
+	background-color: #858585;
+}
